@@ -1,0 +1,31 @@
+.header {
+    display: flex;
+    width: 300px;
+    transition-duration: 500ms;
+    transform: translate(-270px);
+
+}
+.header:hover{
+    transition-duration: 500ms;
+    transform: translate(0px);
+}
+.bk{
+    margin-top: 5px;
+    border-radius: 10px;
+width: 20px;
+    height: 20px;
+    display: block;
+    background-color: #65ea33;
+}
+a {
+    color: #636e54;
+    margin-right: 10px;
+    text-decoration: none;
+}
+a:hover{
+ color: #65ea33;
+}
+
+.active{
+    color: #65ea33;
+}
