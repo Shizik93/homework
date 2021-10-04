@@ -1,6 +1,9 @@
-export const homeWorkReducer = (state: any, action: any): any => { // need to fix any
+import {initialPeopleType} from "../HW8";
+
+export const homeWorkReducer = (state: Array<initialPeopleType>, action: any): Array<initialPeopleType> => { // need to fix any
     switch (action.type) {
         case 'sort': {
+
             // need to fix
             return state
         }
