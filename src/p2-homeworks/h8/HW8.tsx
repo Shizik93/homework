@@ -18,20 +18,18 @@ const initialPeople = [
 ]
 
 function HW8() {
-    const [people, setPeople] = useState<Array<initialPeopleType>>(initialPeople) // need to fix any
+    const [people, setPeople] = useState<Array<initialPeopleType>>(initialPeople)
 
-    // need to fix any
+
     const finalPeople = people.map((p: initialPeopleType) => (
         <div key={p._id}>
             {p.name}, {p.age}
         </div>
     ))
 
-    const sortUp = () => setPeople(homeWorkReducer(initialPeople, {type: 'sort',payload:'up'}))
-    const sortDown = () => setPeople(homeWorkReducer(initialPeople,{type:'sort',payload:'down'}))
-      const checkPayload = () => setPeople(homeWorkReducer(initialPeople,{type:'check',payload:18}))
-
-
+    const sortUp = () => setPeople(homeWorkReducer(initialPeople, {type: 'sort', payload: 'up'}))
+    const sortDown = () => setPeople(homeWorkReducer(initialPeople, {type: 'sort', payload: 'down'}))
+    const checkPayload = () => setPeople(homeWorkReducer(initialPeople, {type: 'check', payload: 18}))
 
 
     return (
@@ -44,9 +42,7 @@ function HW8() {
 
             <div><SuperButton onClick={sortUp}>sort up</SuperButton></div>
             <div><SuperButton onClick={sortDown}>sort down</SuperButton></div>
-             <div><SuperButton onClick={checkPayload}>check 18</SuperButton></div>
-
-
+            <div><SuperButton onClick={checkPayload}>check 18</SuperButton></div>
 
             <hr/>
             {/*для личного творчества, могу проверить*/}
