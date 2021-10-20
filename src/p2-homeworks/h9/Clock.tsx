@@ -17,7 +17,6 @@ function Clock() {
         setTimerId(id)
     }
 
-
     const onMouseEnter = () => {
         setShow(true)
         // show
@@ -28,7 +27,7 @@ function Clock() {
     }
 
     const stringTime = date && `${date?.getHours()}:${date?.getMinutes()}:${date?.getSeconds()}`
-    const stringDate = `${new Date().getFullYear()}:${new Date().getMonth()}:${new Date().getDate()}`
+    const stringDate = date && `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`
 
     return (
         <div>
