@@ -7,25 +7,28 @@ function Clock() {
     const [show, setShow] = useState<boolean>(false)
 
     const stop = () => {
-        // stop
+        clearInterval(timerId)
     }
     const start = () => {
         stop()
         const id: number = window.setInterval(() => {
-            // setDate
+            setDate(new Date())
         }, 1000)
         setTimerId(id)
     }
 
+
     const onMouseEnter = () => {
+        setShow(true)
         // show
     }
     const onMouseLeave = () => {
         // close
+        setShow(false)
     }
 
-    const stringTime = 'Time' // fix with date
-    const stringDate = 'Date' // fix with date
+    const stringTime = date && `${date?.getHours()}:${date?.getMinutes()}:${date?.getSeconds()}`
+    const stringDate = `${new Date().getFullYear()}:${new Date().getMonth()}:${new Date().getDate()}`
 
     return (
         <div>
