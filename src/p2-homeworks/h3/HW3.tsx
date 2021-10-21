@@ -22,8 +22,7 @@ function HW3() {
         <div>
             <hr/>
             homeworks 3
-
-
+            
             <GreetingContainer users={users} addUserCallback={addUserCallback}/>
 
             <hr/>
