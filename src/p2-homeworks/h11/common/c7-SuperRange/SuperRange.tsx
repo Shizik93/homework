@@ -1,5 +1,6 @@
 import React, {ChangeEvent, DetailedHTMLProps, InputHTMLAttributes} from 'react'
 import s from './SuperRange.module.css'
+import {Slider} from "@mui/material";
 
 // тип пропсов обычного инпута
 type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
@@ -27,9 +28,11 @@ const SuperRange: React.FC<SuperRangePropsType> = (
 
     const finalRangeClassName = `${s.range} ${className ? className : ''}`
 
+    // @ts-ignore
     return (
         <>
             <input
+                value={restProps.value}
                 type={'range'}
                 onChange={onChangeCallback}
                 className={finalRangeClassName}
