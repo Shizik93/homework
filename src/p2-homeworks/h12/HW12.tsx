@@ -12,46 +12,30 @@ function HW12() {
     const onChangeCallback = (theme: ThemeType) => {
         dispatch(changeTheme(theme))
     }
-    let newTheme=style.default
-    if(theme === 'Aqua'){
-
-        newTheme=style.aqua
+    const setNewTheme = (theme: ThemeType) => {
+        if (theme === 'Aqua') {
+            return style.aqua
+        } else if (theme === 'Red') {
+            return style.red
+        } else if (theme === 'Dark') {
+            return style.dark
+        } else {
+            return style.default
+        }
     }
-    else if(theme === 'Red'){
-        newTheme=style.red
-    }
-    else if(theme === 'Dark'){
-        newTheme=style.dark
-    }
-    else {
-        newTheme=style.default
-    }
-
 
 
     return (
-        <div className={newTheme}>
+        <div className={setNewTheme(theme)}>
             <div>
                 <hr/>
                 <span>
                 homeworks 12
             </span></div>
-{/*            <div>Aqua<SuperCheckbox onChange={() => {
-                onChangeCallback('aqua')
-            }}/></div>
-            <div>Lightcoral<SuperCheckbox onChange={() => {
-                onChangeCallback('lightcoral')
-            }}/></div>
-            <div>Dimgrey<SuperCheckbox onChange={() => {
-                onChangeCallback('dimgrey')
-            }}/></div>
-            <div>Default<SuperCheckbox onChange={() => {
-                onChangeCallback('default')
-            }}/></div>*/}
-            <SuperRadio value={theme} onChangeOption={onChangeCallback} name={'radio'} options={['Dark','Red','Aqua','Default']}/>
 
-            {/*should work (должно работать)*/}
-            {/*SuperSelect or SuperRadio*/}
+            <SuperRadio value={theme} onChangeOption={onChangeCallback} name={'radio'}
+                        options={['Dark', 'Red', 'Aqua', 'Default']}/>
+
 
             <hr/>
         </div>
